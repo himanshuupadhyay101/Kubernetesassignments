@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lbs
+  labels:
+    service: ess
+spec:
+
+  type: LoadBalancer
+  ports:
+  - port: 9200
+    name: http
+  selector:
+    service: ess
